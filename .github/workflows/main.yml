@@ -1,0 +1,63 @@
+name: Build EXE
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify .NET Framework 4.8
+        shell: powershell
+        run: |
+          $release = Get-ItemPropertyValue `
+            -Path 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full' `
+            -Name Release
+
+          Write-Host ".NET Framework Release: $release"
+
+          if ($release -lt 528040) {
+            Write-Error ".NET Framework 4.8 or newer is not installed."
+            exit 1
+          }
+
+          Write-Host ".NET Framework 4.8+ is installed."
+
+      - name: Verify .NET Framework 4.8 Targeting Pack
+        shell: powershell
+        run: |
+          $targetingPack = "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8"
+
+          if (-not (Test-Path $targetingPack)) {
+            Write-Error ".NET Framework 4.8 Targeting Pack was not found."
+            exit 1
+          }
+
+          Write-Host ".NET Framework 4.8 Targeting Pack found."
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2
+
+      - name: Restore NuGet Packages
+        run: nuget restore Re4QuadNewAge-Modded/Re4QuadNewAge-Modded.sln
+
+      - name: Build Solution
+        run: >
+          msbuild Re4QuadNewAge-Modded/Re4QuadNewAge-Modded.sln
+          /p:Configuration=Release
+          /p:Platform="Any CPU"
+          /m
