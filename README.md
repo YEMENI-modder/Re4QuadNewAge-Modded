@@ -1,7 +1,7 @@
 # Re4QuadNewAge
 Re4 Quad Extreme Editor [NewAge] - The best Re4 editor
 
-![](https://i.imgur.com/WvuAgHi.png)
+![]([https://i.imgur.com/WvuAgHi.png](https://imgur.com/a/SFkpdsg))
 
 **Info:**
 <br>License: MIT Licence
