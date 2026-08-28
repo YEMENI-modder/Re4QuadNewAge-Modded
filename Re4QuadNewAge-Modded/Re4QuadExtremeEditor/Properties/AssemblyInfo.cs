@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // As informações gerais sobre um assembly são controladas por
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associadas a um assembly.
-[assembly: AssemblyTitle("Re4 Quad Extreme Editor [New Age]")]
-[assembly: AssemblyDescription("Re4 Quad Extreme Editor [New Age]")]
+[assembly: AssemblyTitle("Re4 Quad Extreme Editor [New Age-Modded]")]
+[assembly: AssemblyDescription("Re4 Quad Extreme Editor [New Age-Modded]")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Re4 Quad Extreme Editor [New Age]")]
-[assembly: AssemblyProduct("Re4 Quad Extreme Editor [New Age]")]
-[assembly: AssemblyCopyright("Copyright ©JADERLINK 2024")]
+[assembly: AssemblyCompany("Re4 Quad Extreme Editor [New Age-Modded]")]
+[assembly: AssemblyProduct("Re4 Quad Extreme Editor [New Age-Modded]")]
+[assembly: AssemblyCopyright("Copyright ©Rxuf 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -16,11 +16,11 @@ namespace Re4QuadExtremeEditor.src.Class.MyProperty
 
         [CategoryAttribute("Info")]
         [DescriptionAttribute("")]
-        [DisplayNameAttribute("Re4 Quad Extreme Editor [New Age]")]
+        [DisplayNameAttribute("Re4 Quad Extreme Editor [New Age-Modded]")]
         [DefaultValueAttribute(null)]
         [ReadOnlyAttribute(true)]
         [BrowsableAttribute(true)]
-        public string Version { get => "Version: 1.2.4"; }
+        public string Version { get => "Version: 1.0.0"; }
 
         [CategoryAttribute("Info")]
         [DescriptionAttribute("")]
